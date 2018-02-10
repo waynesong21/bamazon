@@ -38,7 +38,7 @@ function itemSearch(){
         })
         // .then methods searches for the corresponding item and displays in terminal
         .then(function(answer) {
-            console.log(answer.id);
+            // console.log(answer.id);
             connection.query("SELECT * FROM products WHERE id=?", [answer.id], function(err, res) {
                 if (err) {
                     console.log(err);
@@ -89,7 +89,7 @@ function queryQuantity(id) {
 
                 // compare query with stock
                 if (stock >= query){
-                    console.log("There are this many in stock", res[0].stock_quantity);
+                    console.log("Great! Your order has been added to the cart.");
                 }
 
                 else {
